@@ -11,10 +11,12 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      console.log(import.meta.env.VITE_API_BASE_URL); // check this in console
       await axios.post(`${import.meta.env.VITE_API_BASE_URL}/contacts`, form);
       alert('Contact saved!');
       setForm({ name: '', email: '', contact: '', address: '' });
     } catch (err) {
+      console.error('Error:', err.response?.data || err.message);
       alert('Error saving contact');
     }
   };
