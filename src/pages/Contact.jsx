@@ -13,7 +13,7 @@ export default function Contact() {
     try {
       console.log(import.meta.env.VITE_API_BASE_URL); // ✅ correct
  // check this in console
-      await axios.post(`${import.meta.env.VITE_API_BASE_URL}/contacts`, form);
+      await axios.post(`${import.meta.env.VITE_API_BASE_URL}/contacts`, formData);
       alert('Contact saved!');
       setForm({ name: '', email: '', contact: '', address: '' });
     } catch (err) {
